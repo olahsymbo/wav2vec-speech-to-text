@@ -1,0 +1,42 @@
+[project]
+name = "wav2vec-speech-to-text"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "olahsymbo@gmail.com"}
+]
+packages = [{ include = "wav2vec_speech_to_text", from = "src"}]
+
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch (==1.12.0)",
+    "torchaudio (==0.12.0)",
+    "scikit-learn (>=1.7.0,<2.0.0)",
+    "pyyaml (>=6.0.2,<7.0.0)",
+    "numpy (==1.25)",
+    "jiwer (>=4.0.0,<5.0.0)",
+    "fastapi (>=0.115.14,<0.116.0)",
+    "uvicorn (>=0.34.3,<0.35.0)",
+    "python-multipart (>=0.0.20,<0.0.21)",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ["py38"]
+
+[tool.isort]
+profile = "black"
+
+[tool.poetry.group.dev.dependencies]
+isort = "^6.0.1"
+pytest = "^8.4.1"
+flake8 = "^7.3.0"
+black = "^25.1.0"
+mypy = "^1.16.1"
+

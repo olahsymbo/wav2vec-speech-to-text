@@ -1,0 +1,21 @@
+dataset:
+  root: artifacts/datasets
+  sample_rate: 16000
+  input_channels: 1   
+  max_length_seconds: 10
+
+model:
+  in_channels: 256    
+  out_channels: 256 
+  dim: 256         
+  num_layers: 32    
+  nhead: 8         
+
+training:
+  batch_size: 16
+  learning_rate: 0.0003
+  epochs: 500
+  optimizer: adam
+  weight_decay: 0.01
+  save_dir: artifacts/trained_models/wave2vec
+  model_path: artifacts/trained_models/wave2vec/best_wave2vec_model.pth

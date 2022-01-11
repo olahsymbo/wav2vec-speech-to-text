@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  audio-keyword-detector:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: gunicorn wsgi:app.serve --bind 0.0.0.0:8070 --workers 4 --thread 8 --timeout=3600
+    ports:
+      - "8070:8070"

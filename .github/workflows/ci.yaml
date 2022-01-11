@@ -1,0 +1,31 @@
+name: ci
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  poetry-setup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set Up Poetry and Install Dependencies
+        uses: ./.github/actions/poetry-composite
+        with:
+          python-version: "3.10.x"
+          poetry-version: "2.1.3"
+
+      - name: Lint with task
+        run: make format
+
+      - name: Test with Pytest
+        run: make test
+
+      - name: Build Dist
+        run: make dist
