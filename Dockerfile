@@ -25,7 +25,6 @@ COPY --from=builder ${VIRTUAL_ENV} ${VIRTUAL_ENV}
 
 COPY src/ src/
 COPY app/ app/
-COPY wsgi.py wsgi.py
 
 ENV PYTHONPATH=/akd-app/src
 
