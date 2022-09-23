@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  audio-keyword-detector:
+  wav2vec-speech-to-text:
     build:
       context: .
       dockerfile: Dockerfile
