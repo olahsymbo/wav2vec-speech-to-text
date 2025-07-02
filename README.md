@@ -1,10 +1,10 @@
 # wav2vec-speech-to-text
 
-🧠 End-to-end speech-to-text system using a custom Wav2Vec-style model built in PyTorch, with CTC decoding for transcription from raw waveform input.
+End-to-end speech-to-text system using a custom Wav2Vec-style model built in PyTorch, with CTC decoding for transcription from raw waveform input.
 
 ---
 
-## 📦 Overview
+## Overview
 
 This project implements a simplified Wav2Vec architecture for **automatic speech recognition (ASR)**. It processes raw audio waveforms and produces text transcriptions using:
 
@@ -14,30 +14,30 @@ This project implements a simplified Wav2Vec architecture for **automatic speech
 
 ---
 
-## 🧠 Model Architecture
+## Model Architecture
 
-### 🔹 Feature Encoder (`FeatureEncoder`)
+### Feature Encoder (`FeatureEncoder`)
 
 Extracts latent representations from raw waveforms using 1D convolutions:
 
 
-## 🔧 Usage
+## Usage
 
-### 🧠 Training
+### Training
 ```
 python app/cli.py --mode train
 ```
 
 Trains the model using raw audio files and paired transcripts. Uses CTC loss.
 
-### 🎧 Inference
+### Inference
 ```
 python app/cli.py --mode predict --audio path/to/audio.wav
 ```
 
 Prints decoded transcription using greedy CTC decoding.
 
-### 🧪 Optional: Contrastive Pretraining
+### Optional: Contrastive Pretraining
 You can pretrain the model using unlabeled data and a contrastive loss:
 
 ```
