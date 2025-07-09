@@ -16,10 +16,26 @@ This project implements a simplified Wav2Vec architecture for **automatic speech
 
 ## Model Architecture
 
-### Feature Encoder (`FeatureEncoder`)
+Raw Audio → FeatureEncoder (CNN) → ContextNetwork (Transformer) → CTC Head → Transcription
 
-Extracts latent representations from raw waveforms using 1D convolutions:
 
+### Components:
+
+- **FeatureEncoder**  
+  Extracts latent representations from raw waveforms using 1D convolutions. Downsamples and projects input into compact feature maps.
+
+- **ContextNetwork**  
+  A stack of Transformer encoder layers that capture long-range dependencies and contextual information in the latent feature sequence.
+
+- **CTC Head**  
+  A 1x1 convolution followed by log-softmax to map transformer outputs to a vocabulary distribution at each timestep, enabling CTC loss.
+
+The components perform: 
+
+- End-to-end training with CTC Loss
+- Greedy decoding
+- Contrastive loss pretraining
+- Classification head for auxiliary tasks
 
 ## Usage
 
