@@ -71,7 +71,3 @@ Encourages context features to match the correct latent feature
 
 ✅ Greedy decoder (CTC collapse)
 
-✅ Modular PyTorch design
-
-🧪 Optional contrastive pretraining support
-
